@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const fs = require\\('fs'\\); const content = fs.readFileSync\\('src/App.tsx', 'utf8'\\); const lines = content.split\\('\\\\n'\\); let depth = 0; for \\(let i = 0; i < lines.length; i++\\) { const line = lines[i]; for \\(const c of line\\) { if \\(c === '[' || c === '{' || c === '\\('\\) depth++; if \\(c === ']' || c === '}' || c === '\\)'\\) depth--; } if \\(depth < 0\\) { console.log\\('ERROR at line', i+1, ':', line.trim\\(\\)\\); break; } } console.log\\('Done, final depth:', depth\\);\")",
+      "Bash(npx acorn *)",
+      "Bash(awk 'NR==174||NR==175||NR==206||NR==207||NR==226||NR==227||NR==255||NR==256||NR==293||NR==294||NR==324||NR==325||NR==343||NR==344' src/App.tsx)",
+      "Bash(npx tsc *)",
+      "Bash(PowerShell -Command \"\\(Get-Item src/App.tsx\\).LastWriteTime = Get-Date\")",
+      "Bash(npx esbuild *)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(npx vite *)",
+      "Bash(curl -s http://localhost:5174/)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}
